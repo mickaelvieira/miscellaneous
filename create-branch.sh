@@ -8,26 +8,30 @@ NODE_DIR="${SITE_REPO}/node_modules"
 
 echo "==========================================================================="
 echo "Composer: ${COMPOSER_DIR}"
-echo "Bower: ${BOWER_DIR}"
-echo "Node: ${NODE_DIR}"
+echo "Bower   : ${BOWER_DIR}"
+echo "Node    : ${NODE_DIR}"
 echo "==========================================================================="
 
 cd ${SITE_REPO}
 
-git checkout master
-
-echo ""
-read -e -p "Branch name?: " branchname
-
-if [[ ${branchname} == "" ]]; then
-    echo "You need to provide a branch name"
-    exit 1
-fi
-
-read -e -p "Create a branch with the name ${branchname}? [y/N]: " confirminfo
+read -e -p "Do you want to create a new branch? [y/N]: " confirminfo
 
 if [[ ${confirminfo} == "y" ]]; then
-    git checkout -b ${branchname}
+
+    echo ""
+    read -e -p "Branch name?: " branchname
+
+    if [[ ${branchname} == "" ]]; then
+        echo "You need to provide a branch name"
+        exit 1
+    fi
+
+    read -e -p "Create a branch with the name ${branchname}? [y/N]: " confirminfo
+
+    if [[ ${confirminfo} == "y" ]]; then
+        git checkout master
+        git checkout -b ${branchname}
+    fi
 fi
 
 read -e -p "Do you want to install/reinstall the PHP libraries? [y/N]: " confirminfo
