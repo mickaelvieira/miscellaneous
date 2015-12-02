@@ -16,8 +16,8 @@ $ sudo vim /etc/sudoers.d/privacy
 ```
 
 ```
-Defaults        lecture_file = /etc/sudoers.lecture # alternate sudo lecture path
-Defaults        lecture = always # always display the lecture
+Defaults        lecture_file = /etc/sudoers.lecture    # alternate sudo lecture path
+Defaults        lecture = always                       # always display the lecture
 ```
 
 ## SSH Welcome message
@@ -35,6 +35,6 @@ $ sudo vim /etc/ssh/sshd_config
 ```
 
 ```
-PrintMotd no # Disable the message of the day
-PrintLastLog no # Disable the last login message
+PrintMotd no       # Disable the message of the day
+PrintLastLog no    # Disable the last login message
 ```
