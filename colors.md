@@ -8,7 +8,7 @@ Show `ls` colors
 ```
 $ dircolors --print-database
 ```
-To override default colors, add th
+To override default colors, edit the file `.dircolors`
 
 ```
 $ vim ~/.dircolors
